@@ -1,29 +1,25 @@
 import './App.css';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Navbar from './components/nav/Navbar'
-// import Home from './components/pages/Home'
-// import Pokemon from './components/pages/Pokemon'
-
+import Titulo from './components/title/Titulo'
+import Home from './components/pages/Home'
+import Pokemon from './components/pages/Pokemon'
+import Error404 from './components/pages/Error404'
+import Carrito from './components/pages/Carrito'
 
 function App() {
   return (
     <div className="App">
+      <Navbar />
+      <Titulo tituloProps='PokeShop - Argentina' subTit='Todo lo que necesitas para ser un entrenador pokemon.' />
+      <hr />
       <Router>
-          <Navbar/>
-          <div id="ribbon" className="container-fluid">
-              <div id="birthday" className="container w-50 px-5 rounded-lg">
-                  <div className="row aling-items-center">
-                      <div className="col-sm p-3 text-light text-center">
-                          <p className="text-warning h3">Entrega</p>
-                          <h4 className="text-shadow">MEDINA JONATHAN</h4>
-                      </div>
-                  </div>
-              </div>
-          </div>
-        {/* <Switch>
-          <Route path='./' exact component={Home}/>
-          <Route path='./pokemon' component={Pokemon}/>
-        </Switch> */}
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/pokemon' component={Pokemon} />
+          <Route exact path='/error404' component={Error404} />
+          <Route exact path='/carrito' component={Carrito} />
+        </Switch>
       </Router>
     </div>
   );
