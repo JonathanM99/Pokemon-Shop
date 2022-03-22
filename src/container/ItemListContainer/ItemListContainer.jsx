@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getFetch } from '../../helpers/getFetch'
+import ItemCount from '../../components/ItemCount/ItemCount'
+
 
 
 function ItemListContainer({ greeting }) {
@@ -8,7 +10,8 @@ function ItemListContainer({ greeting }) {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        getFetch // funcion que simula una api
+        getFetch 
+            // funcion que simula una api
             // .then(resp =>{ 
             //     //throw new Error('ESto es un error')//insatanciando un error
             //     console.log(resp)
@@ -41,7 +44,7 @@ function ItemListContainer({ greeting }) {
                                         ${producto.price}
                                     </p>
                                 </div>
-
+                                <ItemCount initial={0} stock={producto.count}/>
                                 <div className="card-footer">
                                     <button className="btn btn-outline-primary btn-block">
                                         Agregar

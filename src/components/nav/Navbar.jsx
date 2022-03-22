@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import { Link } from 'react-router-dom'
+import CartWidget from '../CartWidget/CartWidget'
 
 const navbar = () => {
   return (
@@ -21,7 +22,7 @@ const navbar = () => {
             </Nav>
             <Nav>
               <Nav.Link eventKey={2} href="./carrito" className="btn btn-outline-success">
-                <img width={30} height={30} src='https://w7.pngwing.com/pngs/225/984/png-transparent-computer-icons-shopping-cart-encapsulated-postscript-shopping-cart-angle-black-shopping.png' alt="esto es una imágen" />
+                <CartWidget/>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
