@@ -1,5 +1,4 @@
 import React from 'react'
-import ItemCount from '../ItemCount/ItemCount'
 
 const carrito = () => {
 
@@ -11,7 +10,6 @@ const carrito = () => {
       <p>
         Verifique que los datos sean correctos.
       </p>
-      <ItemCount initial={0} stock={10}/>
     </div>
   )
 }
