@@ -44,7 +44,7 @@ function ItemListContainer({ greeting }) {
 
                                 <div className="card-footer">
                                     <button className="btn btn-outline-primary btn-block">
-                                        Detalle...
+                                        Agregar
                                     </button>
                                 </div>
                             </div>
