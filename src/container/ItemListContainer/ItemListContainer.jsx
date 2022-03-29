@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { getFetch } from '../../helpers/getFetch'
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer'
 import ItemCount from '../../components/ItemCount/ItemCount'
 
 
@@ -11,19 +12,11 @@ function ItemListContainer({ greeting }) {
 
     useEffect(() => {
         getFetch 
-            // funcion que simula una api
-            // .then(resp =>{ 
-            //     //throw new Error('ESto es un error')//insatanciando un error
-            //     console.log(resp)
-            //     return resp
-            // })
             .then(resp => setProductos(resp))
             .catch(err => console.log(err))
             .finally(() => setLoading(false))
     }, [])
 
-
-    console.log(productos)
     return (
         <div>
             {greeting}<hr />
@@ -32,18 +25,10 @@ function ItemListContainer({ greeting }) {
                     <h2>Cargando...</h2>
                     :
                     productos.map((producto) =>
-                        // <div className='row'>
                         <div key={producto.id} className='col-sm-4'>
                             <div className="card border-primary w-100 mb-3 " >
-                                <div className="card-header">
-                                    {`${producto.categoria}`}
-                                </div>
-                                <div className="card-body">
-                                    <img src={producto.foto} alt='' className='w-50' />
-                                    <p className="card-text">
-                                        ${producto.price}
-                                    </p>
-                                </div>
+                                {/* <ItemDetail producto={producto}/> */}
+                                <ItemDetailContainer producto={producto}/>
                                 <ItemCount initial={0} stock={producto.count}/>
                                 <div className="card-footer">
                                     <button className="btn btn-outline-primary btn-block">
@@ -52,7 +37,6 @@ function ItemListContainer({ greeting }) {
                                 </div>
                             </div>
                         </div>
-                        //</div>
                     )
                 }
             </div>
