@@ -1,13 +1,13 @@
 import React from 'react'
+import Hero from '../Hero'
 
-const home = () => {
+const Home = () => {
   return (
     <div>
-        <h1>
-            HOME
-        </h1>
+        <Hero titulo='PokeShop - Argentina' subtitulo='Todo lo que necesitas para ser un entrenador pokemon.'/>
+        <hr />
     </div>
   )
 }
 
-export default home
+export default Home

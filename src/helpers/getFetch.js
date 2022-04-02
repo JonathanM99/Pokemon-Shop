@@ -1,16 +1,8 @@
-const productos = [
-    { id: '1' ,categoria: 'Peluches', price: 37, count: 150, foto:'https://latiendapokemon.com/wp-content/uploads/2016/10/peluches_pokemon.jpg' },
-    { id: '2' ,categoria: 'Disfraces', price: 27, count: 10, foto:'https://latiendapokemon.com/wp-content/uploads/2016/10/disfraces_pokemon.jpg' },
-    { id: '3' ,categoria: 'Juegos', price: 40, count: 45, foto:'https://latiendapokemon.com/wp-content/uploads/2016/10/juegos_cartas_pokemon.jpg' },
-    { id: '4' ,categoria: 'Zapatillas', price: 55, count: 30, foto:'https://latiendapokemon.com/wp-content/uploads/2016/10/zapatillas_pokemon.jpg' },
-    { id: '5' ,categoria: 'Camisetas', price: 11, count: 52, foto:'https://latiendapokemon.com/wp-content/uploads/2016/10/camisetas_pokemon.jpg' },
-    { id: '6' ,categoria: 'Calcetines', price: 19, count: 200, foto:'https://latiendapokemon.com/wp-content/uploads/2016/10/calcetines_pokemon.jpg' },
-    { id: '7' ,categoria: 'Posters', price: 2, count: 49, foto:'https://latiendapokemon.com/wp-content/uploads/2016/10/posters_pokemon-1.jpg' },
-    { id: '8' ,categoria: 'Tazas', price: 1, count: 32, foto:'https://latiendapokemon.com/wp-content/uploads/2016/10/tazas_pokemon.jpg' },
-    { id: '9' ,categoria: 'Gorras', price: 10, count: 71, foto:'https://latiendapokemon.com/wp-content/uploads/2016/10/gorras_pokemon.jpg' }
-  ]
+import { productos } from './data'
 
-export const getFetch = new Promise(( resolve, reject )=>{
+const getById = (id, array) => array.find((el) => el.id === id);
+
+const getProducts = new Promise(( resolve, reject )=>{
     
     let condition=true
     if (condition) {
@@ -21,17 +13,25 @@ export const getFetch = new Promise(( resolve, reject )=>{
         reject('400 not found')
         
     }
-})
+});
 
-export const getFetchOne = new Promise(( resolve, reject )=>{
-    
-    let condition=true
-    if (condition) {
-        setTimeout(()=>{ 
-            resolve(productos)
-         }, 3000)
-    } else {
-        reject('400 not found')
-        
+const getAllProductsFromDB = async (setState) => {
+  try {
+    const result = await getProducts;
+    setState(result);
+  } catch (error) {
+    console.log(error);
+    alert('No podemos mostrar los productos en este momento');
+  }
+};
+
+const getProductById = async (id, setState) => {
+    try {
+      const result = await getProducts;
+      setState(getById(id, result));
+    } catch (error) {
+      console.log(error);
     }
-})
+};
+
+export { getAllProductsFromDB, getProductById };
