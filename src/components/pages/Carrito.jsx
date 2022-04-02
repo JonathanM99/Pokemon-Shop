@@ -1,6 +1,6 @@
 import React from 'react'
 
-const carrito = () => {
+const Carrito = () => {
 
   return (
     <div>
@@ -14,4 +14,4 @@ const carrito = () => {
   )
 }
 
-export default carrito
+export default Carrito

@@ -1,18 +1,16 @@
 import React from 'react'
-import ItemListContainer from '../../container/ItemListContainer/ItemListContainer'
+import ItemListContainer from '../container/ItemListContainer'
 
 
-const pokemon = () => {
+const Pokemon = () => {
   return (
     <div>
       <h1>
         POKEMONES
       </h1>
-      <ItemListContainer
-        greeting=''
-      />
+      <ItemListContainer/>
     </div>
   )
 }
 
-export default pokemon
+export default Pokemon
