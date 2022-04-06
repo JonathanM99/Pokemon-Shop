@@ -12,9 +12,9 @@ const ItemDetailContainer = ({id}) => {
 
   return (
     <div>
-      <h2>Productos destacados</h2>
+      <h2>Producto destacado</h2>
       {/* <ItemDetail prod={producto}/> */}
-      {producto ? <ItemDetail item={producto} /> : <p>Obteniendo producto...</p>}
+      {producto ? <ItemDetail prod={producto} /> : <p>Obteniendo producto...</p>}
     </div>
   );
 };

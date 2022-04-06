@@ -1,6 +1,6 @@
 export const productos = [
     {
-        id: '1',
+        id: 1,
         categoria: 'Peluches',
         price: 37,
         count: 150,
@@ -8,7 +8,7 @@ export const productos = [
         foto: 'https://latiendapokemon.com/wp-content/uploads/2016/10/peluches_pokemon.jpg'
     },
     {
-        id: '2',
+        id: 2,
         categoria: 'Disfraces',
         price: 27,
         count: 10,
@@ -17,7 +17,7 @@ export const productos = [
     },
     {
 
-        id: '3',
+        id: 3,
         categoria: 'Juegos',
         price: 40,
         count: 45,
@@ -26,7 +26,7 @@ export const productos = [
     },
     {
 
-        id: '4',
+        id: 4,
         categoria: 'Zapatillas',
         price: 55,
         count: 30,
@@ -35,7 +35,7 @@ export const productos = [
     },
     {
 
-        id: '5',
+        id: 5,
         categoria: 'Camisetas',
         price: 11,
         count: 52,
@@ -44,7 +44,7 @@ export const productos = [
     },
     {
 
-        id: '6',
+        id: 6,
         categoria: 'Calcetines',
         price: 19,
         count: 200,
@@ -53,7 +53,7 @@ export const productos = [
     },
     {
 
-        id: '7',
+        id: 7,
         categoria: 'Posters',
         price: 2,
         count: 49,
@@ -62,7 +62,7 @@ export const productos = [
     },
     {
 
-        id: '8',
+        id: 8,
         categoria: 'Tazas',
         price: 1,
         count: 32,
@@ -71,7 +71,7 @@ export const productos = [
     },
     {
 
-        id: '9',
+        id: 9,
         categoria: 'Gorras',
         price: 10,
         count: 71,

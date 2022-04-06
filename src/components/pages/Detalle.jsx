@@ -7,7 +7,7 @@ const Detalle = () => {
 
   return (
     <div>
-        <ItemDetailContainer id={3} />
+      <ItemDetailContainer id={3} />
     </div>
   )
 }

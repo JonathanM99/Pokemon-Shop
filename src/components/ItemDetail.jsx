@@ -8,16 +8,16 @@ const ItemDetail = ({ prod }) => {
   };
 
   return (
-    <div className="product-detail">
-      <img src={prod.foto} alt="" className="product-detail__img" />
-      <div className="product-detail__info">
-        <h2 className="name">{prod.categoria}</h2>
-        <p className="description">{prod.description}</p>
-        <ul className="info-grid">
+    <div>
+      <img src={prod.foto} alt=""/>
+      <div>
+        <h2>{prod.categoria}</h2>
+        <p>{prod.description}</p>
+        <ul>
           <li>Price:</li>
           <li>${prod.price}</li>
         </ul>
-        <ItemCount stock={prod.stock} initial={1} onAdd={onAdd} />
+        <ItemCount initial={1} stock={prod.count} onAdd={onAdd}/>
       </div>
     </div>
   );

@@ -1,20 +1,16 @@
-import { productos } from './data'
+//importo los productos
+import { productos } from './data';
 
 const getById = (id, array) => array.find((el) => el.id === id);
 
-const getProducts = new Promise(( resolve, reject )=>{
-    
-    let condition=true
-    if (condition) {
-        setTimeout(()=>{ 
-            resolve(productos)
-         }, 3000)
-    } else {
-        reject('400 not found')
-        
-    }
+// promesas
+const getProducts = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(productos);
+  }, 2000);
 });
 
+//Async Await que setea mi hook de estado
 const getAllProductsFromDB = async (setState) => {
   try {
     const result = await getProducts;
@@ -25,13 +21,14 @@ const getAllProductsFromDB = async (setState) => {
   }
 };
 
+//Async Await que setea mi hook de estado
 const getProductById = async (id, setState) => {
-    try {
-      const result = await getProducts;
-      setState(getById(id, result));
-    } catch (error) {
-      console.log(error);
-    }
+  try {
+    const result = await getProducts;
+    setState(getById(id, result));
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export { getAllProductsFromDB, getProductById };
