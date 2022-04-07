@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ItemCount from './ItemCount';
 import { Link } from 'react-router-dom'
+import { useCartContext } from './context/CartContex'
 
 
 const ItemDetail = ({ prod }) => {
@@ -9,13 +10,16 @@ const ItemDetail = ({ prod }) => {
   const [show,setShow] = useState(false);
   const [showItem,setShowItem] = useState(true);
 
+  const {addToCart, cartList} = useCartContext()
 
   const onAdd = (contador) => {
     setCont(contador);
     setShow(true);
     setShowItem(false);
+    addToCart( { ...prod, cantidad: contador } )
   };
 
+  console.log(cartList)
   return (
     <div>
       <img src={prod.foto} alt="" />
