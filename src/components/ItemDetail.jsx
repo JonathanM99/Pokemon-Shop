@@ -1,23 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ItemCount from './ItemCount';
+import { Link } from 'react-router-dom'
+
 
 const ItemDetail = ({ prod }) => {
 
+  const [cont, setCont] = useState(1);
+  const [show,setShow] = useState(false);
+  const [showItem,setShowItem] = useState(true);
+
+
   const onAdd = (contador) => {
-    alert(`Has agregado ${contador} cervezas 🍺`);
+    setCont(contador);
+    setShow(true);
+    setShowItem(false);
   };
 
   return (
     <div>
-      <img src={prod.foto} alt=""/>
-      <div>
+      <img src={prod.foto} alt="" />
+      <div className='container'>
         <h2>{prod.categoria}</h2>
         <p>{prod.description}</p>
         <ul>
-          <li>Price:</li>
-          <li>${prod.price}</li>
+          {showItem?<li>Precio: ${prod.price}</li>:null}
+          {show?<li>Total: ${prod.price * cont}</li>:null}
+          {show?<li>Has agregado {cont} cervezas 🍺</li>:null}
         </ul>
-        <ItemCount initial={1} stock={prod.count} onAdd={onAdd}/>
+        {showItem?<ItemCount initial={1} stock={prod.count} onAdd={onAdd}/>:null}
+        <Link to="/carrito">
+          {show?<button type='button' visible={false}>Terminar Compra</button>:null}
+        </Link>
       </div>
     </div>
   );
